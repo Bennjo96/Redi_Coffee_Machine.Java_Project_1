@@ -10,14 +10,15 @@ public class IngredientsProcessing {
     private double milk;
     private double ice;
     private int Count = 0;
-
-    public IngredientsProcessing() {           // calling for all ingredients.
+    
+    // calling for all ingredients.
+    public IngredientsProcessing() {           
         this.milk = 0;
         this.water = 0;
         this.grind = 0;
     }
-
-    private void EnterIngredient() {                          //calling for putting Ingredients
+   //calling for putting Ingredients
+    private void EnterIngredient() {                         
         System.out.println("\n putting..");
         this.grind = 250;
         this.milk = 1;
@@ -25,14 +26,14 @@ public class IngredientsProcessing {
         this.ice = 2;
         System.out.println("putting Completed you can make coffee now.");
     }
-
-    private void GetIngredient() {                                                          //To Get Status
+         //To Get Status
+    private void GetIngredient() {                                                       
         System.out.println(" Coffee grind (g) " + String.format("%.1f", this.grind));
         System.out.println("  Milk(L) " + String.format("%.1f", this.milk));
         System.out.println(" Water(L) " + String.format("%.1f", this.water));
     }
-
-    private void CoffeeMenu() {                                                           //Coffee Selection Menu
+      //Coffee Selection Menu
+    private void CoffeeMenu() {                                                           
         System.out.println("\n ------------------ ");
         System.out.println("|   Select Type of coffee:   |\n ------------------ \n| 1: Expresso |\n| 2: Latte  |\n| 3: Ice |\n| 4: Drip  |\n|  0 to Cancell  |");
         System.out.println(" ------------------ \n");
@@ -44,16 +45,19 @@ public class IngredientsProcessing {
                 currentDrink = Drinks.makeEspresso();//Calling Expresso Method
                 break;
             case '2':
-                currentDrink = Drinks.makeLatte();                                          //Calling Latte Method
+                 //Calling Latte Method
+                currentDrink = Drinks.makeLatte();                                         
                 break;
             case '3':
-                this.Ice();                                                       //Calling  Ice Method
+                //Calling  Ice Method
+                this.Ice();                                                       
                 break;
             case '4':
                 currentDrink = Drinks.makeDrip();
                 break;
 
-            case '0':                                                             // cancelling
+            case '0': 
+                 // cancelling
                 break;
 
         }
@@ -77,8 +81,8 @@ public class IngredientsProcessing {
             System.out.println("\nmissing some ingredients, please put.");
         }
     }
-
-    private void Ice() {                                                      // Ice making Method
+        // Ice making Method
+    private void Ice() {                                                     
         if (this.grind >= 5 && this.ice >= 1) {
             System.out.println("\nMaking Ice coffee...");
             System.out.println("\nTaking 5g of grind.");
